@@ -252,3 +252,5 @@ def main():
 
     print("Bot de parrainage démarré.")
     app.run_polling()
+    if __name__ == "__main__":
+    main()
