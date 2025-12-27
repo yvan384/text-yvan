@@ -1,4 +1,3 @@
-# bot_parrainage.py
 import sqlite3
 from datetime import datetime
 
@@ -231,6 +230,7 @@ async def invitation(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text("Aucun lien d'invitation n'est configuré.")
 
+
 # =========================
 # Entrée du programme
 # =========================
@@ -252,5 +252,7 @@ def main():
 
     print("Bot de parrainage démarré.")
     app.run_polling()
-    if __name__ == "__main__":
+
+
+if __name__ == "__main__":
     main()
