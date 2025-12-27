@@ -12,8 +12,10 @@ from telegram.ext import (
 )
 
 # =========================
-# Configuration (Environ + Valeurs par défaut)
+# Configuration (Railway Variables ou valeurs par défaut)
 # =========================
+# Bonnes pratiques: Railway Variables doivent contenir ces valeurs.
+# Par commodité, on garde des valeurs par défaut identiques à ton setup.
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "6555077062:AAGlIz7Lewj_5hikssB_a7UXj9xy2FOR1w4").strip()
 BOT_USERNAME = os.environ.get("BOT_USERNAME", "n_y_w_bot").strip()
 CHANNEL_ID = os.environ.get("CHANNEL_ID", "@nywtech3").strip()
@@ -64,7 +66,7 @@ def init_db():
 
 
 # =========================
-# Utilitaires
+# Utilitaires de parrainage
 # =========================
 def ensure_user_record(user_id: int, username: str, first_name: str):
     conn = get_db()
@@ -166,7 +168,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     ensure_user_record(user_id, username, first_name)
 
-    msg_lines = [f"👋 Bienvenue chez nywtech, {first_name}!"]
+    msg_lines = [f"👋 Bienvenue, {first_name}!"]
 
     args = context.args if hasattr(context, "args") else []
     if args:
